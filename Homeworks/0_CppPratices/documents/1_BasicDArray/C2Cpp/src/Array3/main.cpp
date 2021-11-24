@@ -18,7 +18,7 @@ public:
 };
 
 
-void main()
+int main()
 {
 	DArray pa;
 
@@ -32,6 +32,7 @@ void main()
 	pa.PrintArray( );
 
 	//pa.FreeArray( );
+	return 0;
 }
 
 DArray::DArray()
