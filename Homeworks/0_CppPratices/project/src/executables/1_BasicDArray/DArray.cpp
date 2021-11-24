@@ -14,15 +14,17 @@ DArray::DArray() {
 
 // set an array with default values
 DArray::DArray(int nSize, double dValue)
-	: m_pData(new double[nSize]), m_nSize(nSize)
 {
+	m_pData = new double[nSize];
+	m_nSize = nSize;
 	for (int i = 0; i < nSize; i++)
 		m_pData[i] = dValue;
 }
 
 DArray::DArray(const DArray& arr)
-	: m_pData(new double[arr.m_nSize]), m_nSize(arr.m_nSize)
 {
+	m_pData = new double[arr.m_nSize];
+	m_nSize = arr.m_nSize;
 	for (int i = 0; i < m_nSize; i++)
 		m_pData[i] = arr.m_pData[i];
 }
@@ -62,8 +64,7 @@ int DArray::GetSize() const {
 
 // set the size of the array
 void DArray::SetSize(int nSize) {
-	if (m_nSize == nSize)
-		return;
+	if (m_nSize == nSize) return;
 
 	double* pData = new double[nSize];
 
